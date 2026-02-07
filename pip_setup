@@ -1,12 +1,7 @@
-# Create a virtual environment in the project directory
+#!/bin/bash
 cd ~/software/android-bundle-uploader
 python3 -m venv env
-
-# Activate it
-source env/bin/activate
-
-# Install the required packages
-pip install google-api-python-client oauth2client httplib2
-
-# Now run your script
-python3 main.py ../generika_android/generika.json org.oddb.generika /home/zdavatz/software/generika_android/app/build/outputs/bundle/release/app-release.aab production
+# Install packages using the venv's pip directly
+env/bin/pip install google-api-python-client oauth2client httplib2
+# Run using the venv's python directly
+env/bin/python3 main.py ../generika_android/generika.json org.oddb.generika /home/zdavatz/software/generika_android/app/build/outputs/bundle/release/app-release.aab production
